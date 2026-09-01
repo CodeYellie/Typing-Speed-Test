@@ -47,7 +47,6 @@ body {
   max-width: 1300px;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
 }
 
 /* ---- Header ---- */
@@ -55,6 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .header-left {
@@ -111,7 +111,9 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 4rem;
+  border-bottom: 1px solid var(--text-muted);
+  padding: 16px;
 }
 
 /* Stats */
@@ -182,7 +184,6 @@ body {
   padding: 0.35rem 0.85rem;
   font-family: var(--font-ui);
   font-size: 1rem;
-  cursor: pointer;
   transition: all 0.15s ease;
 }
 
