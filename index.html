@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Typing Speed Test</title>
+
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>Typing Speed Test</h1>
+        <p class="personal-best">
+          Personal best: <span id="personal-best">--</span> WPM
+        </p>
+      </header>
+
+      <!-- Live stats (update as you type) -->
+      <div class="stats-bar">
+        <div class="stat">WPM: <strong id="wpm">--</strong></div>
+        <div class="stat">Accuracy: <strong id="accuracy">--%</strong></div>
+        <div class="stat">Time: <strong id="timer">--</strong></div>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings">
+        <div class="setting-group">
+          <span class="setting-label">Difficulty:</span>
+          <div class="setting-options">
+            <button class="setting-btn active" data-difficulty="easy">
+              Easy
+            </button>
+            <button class="setting-btn" data-difficulty="medium">Medium</button>
+            <button class="setting-btn" data-difficulty="hard">Hard</button>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <span class="setting-label">Mode:</span>
+          <div class="setting-options">
+            <button class="setting-btn active" data-mode="timed">
+              Timed (60s)
+            </button>
+            <button class="setting-btn" data-mode="passage">Passage</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing area -->
+      <div class="typing-area">
+        <div class="passage" id="passage">
+          <!-- Text injected by JavaScript -->
+        </div>
+        <p class="typing-hint">
+          <span>Start Typing Test</span>
+          <small>Or click the text and start typing</small>
+        </p>
+      </div>
+
+      <!-- Results (hidden until test finishes) -->
+      <div class="results" id="results" hidden>
+        <h2>Test Complete!</h2>
+        <p class="results-subtitle">
+          Solid run. Keep pushing to beat your high score.
+        </p>
+
+        <div class="results-stats">
+          <div class="result-stat">
+            WPM: <strong id="result-wpm">--</strong>
+          </div>
+          <div class="result-stat">
+            Accuracy: <strong id="result-accuracy">--%</strong>
+          </div>
+          <div class="result-stat">
+            Characters: <strong id="result-chars">--/--</strong>
+          </div>
+        </div>
+
+        <button id="go-again-btn">Go Again</button>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">CodeYellie</a>.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
