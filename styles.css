@@ -47,7 +47,7 @@ body {
   max-width: 1300px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 /* ---- Header ---- */
@@ -103,4 +103,95 @@ body {
 
 .wpm-label {
   color: var(--text);
+}
+
+/* ---- Toolbar ---- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+.stat strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+#wpm {
+  color: var(--text);
+}
+#accuracy {
+  color: var(--incorrect);
+}
+#timer {
+  color: var(--time-color);
+}
+
+.divider {
+  display: inline-block;
+  width: 1px;
+  height: 1.5rem; /* control height here */
+  background-color: var(--border);
+  vertical-align: middle;
+}
+
+/* Settings */
+.settings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.setting-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.setting-label {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.setting-options {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.setting-btn {
+  background: none;
+  border: 1px solid var(--text-muted);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.setting-btn:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+
+.setting-btn.active {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
 }
