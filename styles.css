@@ -1,0 +1,106 @@
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* ---- Variables ---- */
+:root {
+  --bg: hsl(0, 0%, 7%); /* Neutral 900 */
+  --surface: hsl(0, 0%, 15%); /* Neutral 800 */
+  --text: hsl(0, 0%, 100%); /* Neutral 0 */
+  --text-muted: hsl(240, 1%, 59%); /* Neutral 400 */
+  --border: hsl(240, 3%, 46%); /* Neutral 500 */
+  --accent: hsl(214, 100%, 55%); /* Blue 600 */
+  --accent-light: hsl(210, 100%, 65%); /* Blue 400 */
+  --correct: hsl(140, 63%, 57%); /* Green 500 */
+  --incorrect: hsl(354, 63%, 57%); /* Red 500 */
+  --time-color: hsl(49, 85%, 70%); /* Yellow 400 */
+  --font-ui: "Sora", system-ui, sans-serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ---- Header ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--font-ui);
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trophy-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.personal-best {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.personal-best span {
+  color: var(--text);
+}
+
+.wpm-label {
+  color: var(--text);
+}
