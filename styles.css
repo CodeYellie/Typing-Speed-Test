@@ -196,3 +196,13 @@ body {
   border-color: var(--accent-light);
   color: var(--accent-light);
 }
+
+#passage span.correct {
+  color: var(--correct);
+}
+#passage span.incorrect {
+  color: var(--incorrect);
+}
+#passage span.active {
+  background-color: var(--border);
+}

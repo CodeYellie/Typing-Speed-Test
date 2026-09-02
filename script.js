@@ -41,3 +41,38 @@ function renderPassage() {
 
 // ─── Kick everything off ─────────────────────────────────────────────────────
 loadPassages();
+
+// ─── Typing state ────────────────────────────────────────────────────────────
+let charIndex = 0; // which character the user is currently on
+let mistakes = 0; // total wrong keypresses
+
+// ─── Listen for keypresses ───────────────────────────────────────────────────
+document.addEventListener("keydown", handleKeydown);
+
+function handleKeydown(e) {
+  // Ignore modifier keys (Shift, Ctrl, Alt, etc.)
+  if (e.key.length > 1) return;
+
+  const spans = passageEl.querySelectorAll("span");
+
+  // Don't go past the end of the passage
+  if (charIndex >= spans.length) return;
+
+  const expected = currentPassage[charIndex];
+  const typed = e.key;
+
+  if (typed === expected) {
+    spans[charIndex].classList.add("correct");
+  } else {
+    spans[charIndex].classList.add("incorrect");
+    mistakes++;
+  }
+
+  charIndex++;
+
+  // Move the "active" cursor highlight
+  spans.forEach((s) => s.classList.remove("active"));
+  if (charIndex < spans.length) {
+    spans[charIndex].classList.add("active");
+  }
+}
