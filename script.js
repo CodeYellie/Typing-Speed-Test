@@ -50,10 +50,15 @@ let mistakes = 0; // total wrong keypresses
 document.addEventListener("keydown", handleKeydown);
 
 function handleKeydown(e) {
-  // Ignore modifier keys (Shift, Ctrl, Alt, etc.)
   if (e.key.length > 1) return;
 
+  // start the timer on the first keypress
+  if (!testStarted) {
+    startTimer();
+  }
+
   const spans = passageEl.querySelectorAll("span");
+  // ... rest stays exactly the same
 
   // Don't go past the end of the passage
   if (charIndex >= spans.length) return;
@@ -75,4 +80,30 @@ function handleKeydown(e) {
   if (charIndex < spans.length) {
     spans[charIndex].classList.add("active");
   }
+}
+
+// ─── Timer ───────────────────────────────────────────────────────────────────
+let timer = null;
+let timeLeft = 60;
+let testStarted = false;
+
+function startTimer() {
+  testStarted = true;
+
+  timer = setInterval(() => {
+    timeLeft--;
+
+    const mins = Math.floor(timeLeft / 60);
+    const secs = timeLeft % 60;
+    timerEl.textContent = mins + ":" + String(secs).padStart(2, "0");
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      endTest();
+    }
+  }, 1000);
+}
+
+function endTest() {
+  console.log("Test ended!");
 }
